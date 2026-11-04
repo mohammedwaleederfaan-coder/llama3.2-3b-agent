@@ -46,7 +46,7 @@ Client ──► FastAPI (/chat, /chat/stream)
 
 ```bash
 git clone https://github.com/mohammedwaleederfaan-coder/llama3.2-3b-agent.git
-cd llama3.2-3b-agent
+cd ai-agent
 docker compose up --build
 ```
 
@@ -128,5 +128,5 @@ Python · LangChain · LangGraph · Ollama · FastAPI · Docker
 
 ## Author
 
-**YOUR_NAME**
-[LinkedIn](https://www.linkedin.com/in/mohammed-waleed-0065b9409/) · [GitHub](https://github.com/mohammedwaleederfaan-coder)
+**Mohamed Waleed**
+[LinkedIn](https://www.linkedin.com/in/mohammed-waleed-0065b9409/) · [GitHub](https://github.com/YOUR_USERNAME)
