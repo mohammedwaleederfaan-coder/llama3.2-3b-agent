@@ -129,4 +129,4 @@ Python · LangChain · LangGraph · Ollama · FastAPI · Docker
 ## Author
 
 **YOUR_NAME**
-[LinkedIn](https://www.linkedin.com/in/mohammed-waleed-0065b9409/) · [GitHub]([https://github.com/YOUR_USERNAME](https://github.com/mohammedwaleederfaan-coder))
+[LinkedIn](https://www.linkedin.com/in/mohammed-waleed-0065b9409/) · [GitHub](https://github.com/mohammedwaleederfaan-coder)
