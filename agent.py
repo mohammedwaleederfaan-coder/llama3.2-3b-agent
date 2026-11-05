@@ -70,18 +70,17 @@ def get_weather(city: str) -> str:
 
 @tool
 def web_search(query: str) -> str:
-    """Search the internet for current information, news, or recent facts.
-    Input is a short, specific English query, e.g. 'OpenAI new model release'."""
+    """Search the internet for information, comparisons, facts, and recent news.
+    Input is a short, specific English query, e.g. 'PS5 vs PS4 specs comparison'."""
     try:
         with DDGS() as ddgs:
-            results = list(ddgs.news(query, max_results=5))
-        if not results:
+            text = list(ddgs.text(query, max_results=4))
+            news = list(ddgs.news(query, max_results=3))
+        if not text and not news:
             return "No results found."
-        return "\n\n".join(
-            f"Title: {r['title']}\nDate: {r.get('date', '')}\n"
-            f"URL: {r['url']}\nSnippet: {r['body']}"
-            for r in results
-        )
+        parts = [f"Title: {r['title']}\nURL: {r['href']}\nSnippet: {r['body']}" for r in text]
+        parts += [f"Title: {r['title']}\nDate: {r.get('date', '')}\nURL: {r['url']}\nSnippet: {r['body']}" for r in news]
+        return "\n\n".join(parts)
     except Exception as e:
         return f"Search failed: {e}"
 

@@ -46,10 +46,11 @@ def chat_stream(req: ChatRequest):
     config = {"configurable": {"thread_id": req.thread_id}}
 
     def gen():
-        for chunk, _ in agent.stream(
-            {"messages": [("user", req.message)]}, config, stream_mode="messages"
-        ):
-            if isinstance(chunk, AIMessageChunk) and chunk.content:
-                yield chunk.content
+        try:
+            for chunk, _ in agent.stream(...):
+                if isinstance(chunk, AIMessageChunk) and chunk.content:
+                    yield chunk.content
+        except Exception as e:
+            yield f"\n[Error: {e}]"
 
     return StreamingResponse(gen(), media_type="text/plain")
