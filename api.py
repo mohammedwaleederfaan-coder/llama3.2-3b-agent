@@ -47,7 +47,11 @@ def chat_stream(req: ChatRequest):
 
     def gen():
         try:
-            for chunk, _ in agent.stream(...):
+            for chunk, _ in agent.stream(
+                {"messages": [("user", req.message)]},
+                config,
+                stream_mode="messages",
+            ):
                 if isinstance(chunk, AIMessageChunk) and chunk.content:
                     yield chunk.content
         except Exception as e:
