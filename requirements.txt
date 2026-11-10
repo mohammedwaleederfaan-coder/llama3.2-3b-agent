@@ -1,8 +1,13 @@
 fastapi
 uvicorn[standard]
 langchain>=1.0
-langchain-ollama
 langchain-core
+langchain-ollama
 langgraph
 ddgs
 requests
+pandas
+openpyxl
+python-docx
+python-multipart
+streamlit
